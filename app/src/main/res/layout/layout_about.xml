@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    app:cardCornerRadius="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_dialog"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+       <ImageView
+           android:layout_width="@dimen/_170sdp"
+           android:layout_height="@dimen/_150sdp"
+           android:src="@drawable/stay_home"
+           android:layout_gravity="center"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_dialog"
+            android:orientation="vertical">
+
+
+            <com.unco.covid_19.widgets.MyMediumTextView
+                android:id="@+id/txt_amar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="تمامی اطلاعات دریافتی مستقیما از سایت جهانی گرفته شده است و هیچ گونه تغییراتی روی آمار صورت نگرفته است"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <com.unco.covid_19.widgets.MyMediumTextView
+                android:id="@+id/txt_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_amar"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/colorGreen900"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="طراح : پوریا همتی"
+                android:textSize="13sp" />
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.7dp"
+                android:background="@color/colorGreen900"
+                app:layout_constraintEnd_toEndOf="@+id/txt_link"
+                app:layout_constraintStart_toStartOf="@+id/txt_link"
+                app:layout_constraintBottom_toBottomOf="@id/txt_link"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

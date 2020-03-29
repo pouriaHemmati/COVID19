@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_dialog"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+       <com.airbnb.lottie.LottieAnimationView
+           android:layout_width="match_parent"
+           android:layout_height="200dp"
+           app:lottie_fileName="no_connection.json"
+           app:lottie_autoPlay="true"
+           app:lottie_loop="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radius_dialog"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txt_noInternet2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="خطا اتصال"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_noInternet1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="@string/error_network"
+                android:textSize="13sp" />
+
+
+            <com.unco.covid_19.widgets.MyMediumButton
+                android:id="@+id/dialog_txt_underStand"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"
+                android:background="@drawable/radius_layout_no_internet"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="دوباره امتحان کن"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

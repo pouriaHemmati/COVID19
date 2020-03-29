@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_margin="@dimen/_5sdp"
+    android:layoutDirection="ltr"
+    app:cardCornerRadius="10dp"
+    android:orientation="vertical">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layoutDirection="ltr"
+                android:orientation="horizontal"
+                >
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/lay_more"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="@dimen/_40sdp"-->
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <com.unco.covid_19.widgets.MyMediumTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="اطلاعات بیشتر"-->
+<!--                        android:textColor="@color/colorWhite"-->
+<!--                        android:textSize="@dimen/_10sdp"-->
+<!--                        />-->
+<!--                </LinearLayout>-->
+
+                <LinearLayout
+                    android:id="@+id/lay_expand_btn"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <ImageView
+                        android:id="@+id/expand_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="8dp"
+                        android:layout_gravity="center"
+                        android:visibility="visible"
+                        android:rotation="180"
+                        android:src="@drawable/ic_arrow_up" />
+                </LinearLayout>
+
+
+
+
+                <com.unco.covid_19.widgets.MyMediumTextView
+                    android:id="@+id/txt_recycler_count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10sdp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/flag"
+                    app:layout_constraintBottom_toBottomOf="@id/flag"
+                    />
+
+                <ImageView
+                    android:id="@+id/flag"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="0dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                   app:layout_constraintBottom_toTopOf="@+id/lay_expand_btn"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+
+                    />
+
+                <com.unco.covid_19.widgets.MyMediumTextView
+                    android:id="@+id/txt_recycler_country"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_9sdp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintRight_toLeftOf="@+id/txt_recycler_count"
+                    app:layout_constraintTop_toTopOf="@id/txt_recycler_count"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_recycler_count"
+                    />
+
+                <com.unco.covid_19.widgets.MyMediumTextView
+                    android:id="@+id/txt_recycler_cases"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp"
+                    android:text="@string/recycler_cases"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintRight_toRightOf="@id/txt_recycler_count"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_recycler_count"
+
+                    />
+
+                <com.unco.covid_19.widgets.MyMediumTextView
+                    android:id="@+id/txt_recycler_show_cases"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintRight_toLeftOf="@+id/txt_recycler_cases"
+                    app:layout_constraintTop_toTopOf="@+id/txt_recycler_cases"
+                    />
+
+                <com.unco.covid_19.widgets.MyMediumTextView
+                    android:id="@+id/txt_recycler_deaths"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/colorRed700"
+                    android:textSize="@dimen/_11sdp"
+                    android:text="@string/recycler_deaths"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintRight_toRightOf="@id/txt_recycler_count"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_recycler_cases"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    />
+
+                <com.unco.covid_19.widgets.MyMediumTextView
+                    android:id="@+id/txt_recycler_show_deaths"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textColor="@color/colorRed700"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginRight="10dp"
+                    app:layout_constraintRight_toLeftOf="@+id/txt_recycler_deaths"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_recycler_cases"
+                    app:layout_constraintBottom_toBottomOf="parent"
+
+                    />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <LinearLayout
+                        android:id="@+id/expandable_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingRight="16dp"
+                        android:paddingLeft="16dp"
+                        android:paddingBottom="5dp"
+                        android:visibility="gone">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <com.unco.covid_19.widgets.MyMediumTextView
+                                android:id="@+id/txt_recycler_todaycases"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11sdp"                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="@string/txt_recycler_todaycases"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+
+                                />
+
+                            <com.unco.covid_19.widgets.MyMediumTextView
+                                android:id="@+id/txt_recycler_show_todaycases"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11sdp"
+                                android:layout_marginRight="10dp"
+                                app:layout_constraintRight_toLeftOf="@+id/txt_recycler_todaycases"
+                                app:layout_constraintTop_toTopOf="@+id/txt_recycler_todaycases"
+                                />
+
+                            <com.unco.covid_19.widgets.MyMediumTextView
+                                android:id="@+id/txt_recycler_todaydeaths"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11sdp"                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="@string/txt_recycler_todaydeaths"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txt_recycler_todaycases"
+
+                                />
+
+                            <com.unco.covid_19.widgets.MyMediumTextView
+                                android:id="@+id/txt_recycler_show_todaydeaths"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11sdp"
+                                android:layout_marginRight="10dp"
+                                app:layout_constraintRight_toLeftOf="@+id/txt_recycler_todaydeaths"
+                                app:layout_constraintTop_toTopOf="@+id/txt_recycler_todaydeaths"
+                                />
+
+                            <com.unco.covid_19.widgets.MyMediumTextView
+                                android:id="@+id/txt_recycler_recovered"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11sdp"                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="@string/txt_recycler_recovered"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txt_recycler_todaydeaths"
+
+                                />
+
+                            <com.unco.covid_19.widgets.MyMediumTextView
+                                android:id="@+id/txt_recycler_show_recovered"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11sdp"
+                                android:layout_marginRight="10dp"
+                                app:layout_constraintRight_toLeftOf="@+id/txt_recycler_recovered"
+                                app:layout_constraintTop_toTopOf="@+id/txt_recycler_recovered"
+                                />
+
+                            <com.unco.covid_19.widgets.MyMediumTextView
+                                android:id="@+id/txt_recycler_casesPerOneMillion"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11sdp"                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="@string/txt_recycler_casesPerOneMillion"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txt_recycler_recovered"
+
+                                />
+
+                            <com.unco.covid_19.widgets.MyMediumTextView
+                                android:id="@+id/txt_recycler_show_casesPerOneMillion"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11sdp"
+                                android:layout_marginRight="10dp"
+                                app:layout_constraintRight_toLeftOf="@+id/txt_recycler_casesPerOneMillion"
+                                app:layout_constraintTop_toTopOf="@+id/txt_recycler_casesPerOneMillion"
+                                />
+
+                            <com.unco.covid_19.widgets.MyMediumTextView
+                                android:id="@+id/txt_recycler_deathsPerOneMillion"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11sdp"                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:text="@string/txt_recycler_deathsPerOneMillion"
+                                app:layout_constraintRight_toRightOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/txt_recycler_casesPerOneMillion"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                />
+
+                            <com.unco.covid_19.widgets.MyMediumTextView
+                                android:id="@+id/txt_recycler_show_deathsPerOneMillion"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_11sdp"
+                                android:layout_marginRight="10dp"
+                                app:layout_constraintRight_toLeftOf="@+id/txt_recycler_deathsPerOneMillion"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                app:layout_constraintTop_toTopOf="@+id/txt_recycler_deathsPerOneMillion"
+                                />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+                    </LinearLayout>
+        </LinearLayout>
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>
